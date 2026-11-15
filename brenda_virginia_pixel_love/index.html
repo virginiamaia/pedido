@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#21132f">
+<title>Brenda & Virgínia — Nossa história</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;600;700;800;900&display=swap');
+:root{--night:#171126;--plum:#2b1a3d;--pink:#ff78b7;--rose:#ffb4d5;--cream:#fff0f7;--ink:#321b39;--gold:#ffd98c}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--night);color:var(--cream);font-family:Nunito,system-ui,sans-serif;overflow-x:hidden}
+button{font:inherit;cursor:pointer;border:0} .pixel{font-family:"Press Start 2P",monospace;line-height:1.8}
+#stars{position:fixed;inset:0;pointer-events:none;opacity:.55;background-image:radial-gradient(#fff 1px,transparent 1.5px),radial-gradient(#ff9acb 1px,transparent 1.5px);background-size:83px 83px,127px 127px;background-position:0 0,34px 57px;z-index:0}
+.wrap{position:relative;z-index:1;max-width:1050px;margin:auto;padding:24px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;max-width:1050px;margin:auto;padding:18px 24px}
+.brand{font-family:"Press Start 2P";font-size:10px;color:var(--rose);line-height:1.8}.audio{background:#39234d;color:#ffe6f2;border:1px solid #80517c;border-radius:999px;padding:10px 15px;font-weight:800}.spotify-wrap{max-width:430px;margin:20px auto 8px;padding:14px;background:#21172e;border:1px solid #80517c;border-radius:14px}.spotify-wrap iframe{display:block;width:100%;height:152px;border:0;border-radius:12px}.spotify-note{font-size:12px!important;color:#e8c9df!important;margin:10px 0 0!important}
+.hero{min-height:82vh;display:grid;place-items:center;text-align:center;padding:40px 18px}
+.panel{background:linear-gradient(145deg,rgba(72,40,83,.96),rgba(35,23,53,.97));border:3px solid #a85c94;box-shadow:0 0 0 5px #24172f,0 18px 55px #09061199;border-radius:18px;padding:clamp(22px,5vw,48px);max-width:760px;width:100%}
+.eyebrow{color:var(--gold);font-size:12px;font-weight:900;letter-spacing:3px;text-transform:uppercase}
+h1,h2{font-family:"Press Start 2P";line-height:1.8} h1{font-size:clamp(21px,4vw,36px);color:#ffc3df;margin:14px 0} h2{font-size:clamp(15px,2.5vw,22px);color:#ffc3df}
+p{font-size:clamp(16px,2vw,19px);line-height:1.75;color:#fbe8f3}
+.btn{padding:14px 20px;border-radius:10px;background:linear-gradient(#ff9acb,#e84e9c);color:#35172f;font-weight:900;box-shadow:0 5px 0 #8d326d;transition:.15s;display:inline-block}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}.btn:active{transform:translateY(3px);box-shadow:0 2px 0 #8d326d}
+.btn.secondary{background:#453052;color:#ffe8f5;box-shadow:0 5px 0 #24152f;border:1px solid #8d6595}
+.hearts{font-size:26px;letter-spacing:10px;color:#ff83ba;margin:14px}
+.cast{display:flex;justify-content:center;align-items:end;gap:14px;margin:20px auto 8px;max-width:500px}
+.cast img{width:min(42%,190px);height:250px;object-fit:contain;object-position:center bottom;background:#f4b5d4;border:4px solid #ffc1dd;border-radius:12px;image-rendering:pixelated;box-shadow:0 8px 0 #7d376f}
+.cast img:first-child{transform:rotate(-3deg)}.cast img:last-child{transform:rotate(3deg)}
+main{max-width:1050px;margin:auto;padding:10px 24px 80px}
+.chapter{display:none;animation:appear .55s ease}.chapter.active{display:block}
+@keyframes appear{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.scene{position:relative;overflow:hidden;min-height:290px;border:3px solid #b96ba1;border-radius:16px;background:linear-gradient(160deg,#633d75,#261d42 70%);display:grid;place-items:center;text-align:center;padding:30px;margin:18px 0;box-shadow:inset 0 0 60px #120c28}
+.scene:before{content:"";position:absolute;inset:0;opacity:.45;background:linear-gradient(90deg,transparent 49%,#ffffff12 50%,transparent 51%),linear-gradient(transparent 49%,#ffffff12 50%,transparent 51%);background-size:32px 32px;pointer-events:none}
+.scene .landmark{font-size:clamp(48px,9vw,90px);filter:drop-shadow(0 8px 0 #1a1028);position:relative;z-index:1}
+.scene .scene-title{position:relative;z-index:1;font-family:"Press Start 2P";font-size:clamp(12px,2vw,17px);line-height:1.8;color:#ffe0ef;text-shadow:3px 3px #5d285a}
+.scene small{position:relative;z-index:1;color:#ffd2e7;font-weight:800;letter-spacing:1px}
+.dialogue{background:#fff0f7;color:#462344;border:3px solid #f4a4cc;border-radius:14px;padding:20px 22px;max-width:780px;margin:-8px auto 20px;box-shadow:0 6px 0 #a34e85;font-size:17px;line-height:1.7}
+.dialogue strong{color:#b5327a}
+.chapter-head{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}.chapter-count{font-family:"Press Start 2P";font-size:9px;color:#f7a9ce}
+.controls{display:flex;justify-content:space-between;gap:12px;margin:22px 0}.controls button{min-width:125px}
+.progress{height:8px;background:#3b294b;border-radius:20px;overflow:hidden;margin:12px 0 25px}.progress span{height:100%;display:block;background:linear-gradient(90deg,#ff7eb8,#ffd18d);width:0;transition:width .4s}
+.final-scene{background:radial-gradient(ellipse at 50% 30%,#80517d,#2a1a3b 65%,#171126)}
+.proposal{font-family:"Press Start 2P";font-size:clamp(17px,3vw,27px);line-height:1.9;color:#ffd0e6}
+.choice-row{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin:25px 0}.yes{font-size:18px;padding:16px 26px}.no{background:#4b3b59;color:#fff0f7;box-shadow:0 5px 0 #24152f}
+.hidden{display:none!important}
+.ending{padding:28px;text-align:center;border:2px dashed #ffacd1;border-radius:15px;background:#3a2148;margin-top:20px}
+footer{text-align:center;color:#bb91b3;font-size:12px;padding:28px}
+@media(max-width:600px){.topbar{padding:14px}.wrap,main{padding-left:16px;padding-right:16px}.cast img{height:185px}.scene{min-height:250px}.controls button{min-width:0;flex:1;padding:12px 9px}.pixel{font-size:9px}}
+
+/* Cenários ilustrados; as personagens ficam em poses estáticas. */
+.scene{background-size:cover;background-position:center;isolation:isolate}
+.scene:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(25,13,38,.05),rgba(20,10,30,.45));z-index:0;pointer-events:none}
+.scene>div:first-child{position:relative;z-index:1}
+.scene .landmark{display:none}
+.scene .scene-title{display:inline-block;background:rgba(31,17,46,.72);padding:8px 12px;border:2px solid #f4a4cc;border-radius:8px;margin-top:0}
+.scene small{display:block;margin-top:8px;text-shadow:1px 2px #25142e}
+#story .chapter:nth-child(2) .scene{background-image:url('assets/patos-scene.png')}
+#story .chapter:nth-child(3) .scene{background-image:linear-gradient(145deg,#493078,#201d50 55%,#a54f88)}
+#story .chapter:nth-child(4) .scene{background-image:url('assets/natal-scene.png')}
+#story .chapter:nth-child(5) .scene{background-image:url('assets/natal-scene.png')}
+#story .chapter:nth-child(6) .scene{background-image:linear-gradient(120deg,#334b70,#e78a9f)}
+#story .chapter:nth-child(7) .scene{background-image:url('assets/areia-scene.png')}
+#story .chapter:nth-child(8) .scene{background-image:url('assets/pousada-scene.png')}
+@media(max-width:600px){.scene .scene-title{font-size:10px}.scene small{font-size:10px}.cast img{height:205px}}
+
+</style>
+</head>
+<body>
+<div id="stars"></div>
+<header class="topbar"><div class="brand">BRENDA <span style="color:#ff83ba">♥</span> VIRGÍNIA</div><button class="audio" id="audioBtn" aria-pressed="false">♫ Ligar suspense</button></header>
+<section class="hero" id="intro">
+  <div class="panel">
+    <div class="eyebrow">uma pequena história em pixel art</div>
+    <h1>Oi, Brenda...</h1>
+    <div class="cast">
+      <img src="assets/brenda-character.png" alt="Brenda em pixel art">
+      <img src="assets/virginia-character.png" alt="Virgínia em pixel art">
+    </div>
+    <div class="hearts">♥ ✦ ♥ ✦ ♥</div>
+    <p>Tem histórias que começam sem a gente perceber. Esta é a nossa. Preparei uma viagem por algumas lembranças — vem comigo?</p>
+    <button class="btn pixel" id="startBtn">COMEÇAR A HISTÓRIA</button>
+    <p style="font-size:12px;color:#d6b6d0;margin-bottom:0">Dica: toque em “Ligar trilha” para ouvir a música.</p>
+  </div>
+</section>
+<main id="story" class="hidden">
+  <div class="progress"><span id="progressFill"></span></div>
+  <section class="chapter active" data-index="0">
+    <div class="chapter-head"><span class="chapter-count">CAPÍTULO 01</span><span class="eyebrow">Patos · Paraíba</span></div>
+    <h2>Uma noite de São João</h2>
+    <div class="scene"><div><div class="landmark">🎏 🎆 🌽</div><div class="scene-title">São João em Patos/PB</div><small>Uma festa, dois caminhos que se cruzaram</small></div></div>
+    <div class="dialogue">Foi em Patos, num São João, que a gente se conheceu. Naquela noite, nossos caminhos se cruzaram de forma bem engraçada, né?!… <strong>mas ainda não aconteceu nada.</strong> Às vezes, a história só está esperando a hora certa.</div>
+  </section>
+  <section class="chapter" data-index="1">
+    <div class="chapter-head"><span class="chapter-count">CAPÍTULO 02</span><span class="eyebrow">Direct do Instagram</span></div>
+    <h2>Uma conversa que começou</h2>
+    <div class="scene"><div><div class="landmark">📱 💬 💗</div><div class="scene-title">Uma notificação especial</div><small>Comentadoras oficiais da Copa de 2026</small></div></div>
+    <div class="dialogue">E foi na copa que a gente começou a conversar pelo direct do Instagram. Uma mensagem aqui, outra ali… e, quando vimos, já existia uma vontade de continuar conversando.</div>
+  </section>
+  <section class="chapter" data-index="2">
+    <div class="chapter-head"><span class="chapter-count">CAPÍTULO 03</span><span class="eyebrow">21 e 22 de agosto · Natal/RN</span></div>
+    <h2>Finalmente, o encontro</h2>
+    <div class="scene"><div><div class="landmark">🌃 🍹 ✨</div><div class="scene-title">Um barzinho em Natal que você nem queria ir, né?</div><small>A noite de 21 virou dia 22</small></div></div>
+    <div class="dialogue">Depois da Copa, chegou o dia 21 de agosto. A gente se encontrou em um barzinho em Natal. A conversa virou noite, a noite virou dia 22… e foi ali que <strong>ficamos pela primeira vez.</strong> 💗</div>
+  </section>
+  <section class="chapter" data-index="3">
+    <div class="chapter-head"><span class="chapter-count">CAPÍTULO 04</span><span class="eyebrow">22 de agosto · Natal/RN</span></div>
+    <h2>Quando a vontade é ficar mais</h2>
+    <div class="scene"><div><div class="landmark">🎶 🌙 💃</div><div class="scene-title">Mais uma noite juntas</div><small>Uma festa, mais um beijo</small></div></div>
+    <div class="dialogue">A festa nem foi lá essas coisas, mas aí eu deixei de ser uma ratazada e tomei uma iniciativa...E aconteceu de novo: ficamos mais uma vez. Parece que aquela primeira noite tinha deixado um gostinho de quero mais…</div>
+  </section>
+  <section class="chapter" data-index="4">
+    <div class="chapter-head"><span class="chapter-count">CAPÍTULO 05</span><span class="eyebrow">São Fernando/RN ↔ Natal/RN</span></div>
+    <h2>Quase 300km de distância</h2>
+    <div class="scene"><div><div class="landmark">🛣️ 💌 🌟</div><div class="scene-title">A distância entre nós</div><small>Uma em São Fernando, outra em Natal</small></div></div>
+    <div class="dialogue">Não é sempre que dá para estar pertinho, mas a distância nunca impediu a gente de querer se encontrar de novo. Cada reencontro foi ganhando um significado especial.</div>
+  </section>
+  <section class="chapter" data-index="5">
+    <div class="chapter-head"><span class="chapter-count">CAPÍTULO 06</span><span class="eyebrow">Novos lugares, novas memórias</span></div>
+    <h2>Nosso mapa de lembranças</h2>
+    <div class="scene"><div><div class="landmark">🌊 🏘️ 🌅</div><div class="scene-title">João Pessoa · Caicó · Areia</div><small>11/09 · 09/10 · 30/10</small></div></div>
+    <div class="dialogue">No dia 11 de setembro em João Pessoa. 9 de outubro em Caicó. 30 de outubro em Areia. Cada lugar ganhou uma lembrança nossa — e ainda tem tanta coisa esperando para acontecer.</div>
+  </section>
+  <section class="chapter" data-index="6">
+    <div class="chapter-head"><span class="chapter-count">CAPÍTULO 07</span><span class="eyebrow">HOJE</span></div>
+    <h2>O próximo capítulo...</h2>
+    <div class="scene final-scene"><div><div class="landmark">🏡 ✨ 🌹</div><div class="scene-title">Uma pousada em Caicó</div><small>20 de novembro de 2026</small></div></div>
+    <div class="dialogue">Preparei esta pequena viagem pelas nossas lembranças porque… <strong>tem uma pergunta que quero te fazer olhando pra essa sua cara lisa.</strong></div>
+    <div class="panel" style="text-align:center;margin:24px auto">
+      <div class="eyebrow">Brenda, chegou a hora...</div>
+      <div class="cast">
+        <img src="assets/brenda-character.png" alt="Brenda">
+        <img src="assets/virginia-character.png" alt="Virgínia">
+      </div>
+      <div class="hearts">♥ ♥ ♥</div>
+      <div class="proposal">Você aceita namorar comigo?</div>
+      <p>Bora continuar nossa história, minha máquina?</p>
+      <div class="spotify-wrap"><div class="eyebrow" style="margin-bottom:10px">Nossa música para esse momento</div><iframe title="5 Km — Henrique &amp; Juliano no Spotify" src="https://open.spotify.com/embed/track/44VJipd9Hl6BNos2lZ7kjc?utm_source=generator&amp;theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe><p class="spotify-note">Toque no play para ouvir “5 Km”. O Spotify pode solicitar login.</p></div>
+      <div class="choice-row">
+        <button class="btn yes" id="yesBtn">SIM! ❤️</button>
+        <button class="btn no" id="noBtn">Deixa eu pensar… 🥺</button>
+      </div>
+      <div id="yesEnding" class="ending hidden">
+        <div class="pixel" style="color:#ffd0e6;font-size:15px">AAAAAAAA! ♥</div>
+        <p>Então que esse seja só o começo de muitos capítulos, viagens, xêros, beijos, abraços e histórias nossas.</p>
+        <p class="pixel" style="font-size:12px;color:#ffd18d">BRENDA & VIRGÍNIA · AGORA É OFICIAL? 💗</p>
+        <div style="font-size:30px">💗 💖 💞 💘 💗</div>
+      </div>
+      <p id="noMessage" class="hidden" style="font-size:13px;color:#ffd0e6">Tudo bem. O que eu mais quero é que você se sinta feliz e à vontade. ❤️</p>
+    </div>
+  </section>
+  <div class="controls"><button class="btn secondary" id="prevBtn">← VOLTAR</button><button class="btn pixel" id="nextBtn">PRÓXIMO →</button></div>
+</main>
+<footer>Feito com carinho, uma lembrança de cada vez. ♥</footer>
+<script>
+const chapters=[...document.querySelectorAll('.chapter')];let current=0;
+
+const intro=document.getElementById('intro'),story=document.getElementById('story');
+const fill=document.getElementById('progressFill');
+function showChapter(n){current=Math.max(0,Math.min(chapters.length-1,n));chapters.forEach((c,i)=>c.classList.toggle('active',i===current));fill.style.width=((current+1)/chapters.length*100)+'%';document.getElementById('prevBtn').style.visibility=current===0?'hidden':'visible';document.getElementById('nextBtn').textContent=current===chapters.length-1?'RELER O FINAL ↻':'PRÓXIMO →';const audioBtn=document.getElementById('audioBtn');if(current===6){stopMusic();audioBtn.textContent='♫ Romance no Spotify';audioBtn.disabled=true;audioBtn.setAttribute('aria-pressed','false')}else{audioBtn.disabled=false;if(musicMode==='off')audioBtn.textContent='♫ Ligar suspense'}window.scrollTo({top:0,behavior:'smooth'});}
+document.getElementById('startBtn').addEventListener('click',()=>{intro.classList.add('hidden');story.classList.remove('hidden');showChapter(0);startSuspense();});
+document.getElementById('nextBtn').addEventListener('click',()=>{if(current===chapters.length-1){showChapter(0)}else showChapter(current+1)});
+document.getElementById('prevBtn').addEventListener('click',()=>showChapter(current-1));
+
+// Original synthesized suspense and romantic motifs via Web Audio; no external music files required.
+let audioCtx=null,master=null,activeOsc=[],musicMode='off',musicTimer=null;
+function stopMusic(){if(musicTimer)clearInterval(musicTimer);activeOsc.forEach(o=>{try{o.stop()}catch(e){}});activeOsc=[];musicMode='off';}
+function note(freq,duration,type='sine',gain=.035,when=0){if(!audioCtx)return;const osc=audioCtx.createOscillator(),g=audioCtx.createGain();osc.type=type;osc.frequency.value=freq;g.gain.setValueAtTime(.0001,audioCtx.currentTime+when);g.gain.exponentialRampToValueAtTime(gain,audioCtx.currentTime+when+.04);g.gain.exponentialRampToValueAtTime(.0001,audioCtx.currentTime+when+duration);osc.connect(g);g.connect(master);osc.start(audioCtx.currentTime+when);osc.stop(audioCtx.currentTime+when+duration+.05);activeOsc.push(osc);}
+function startSuspense(){if(!audioCtx)return;stopMusic();musicMode='suspense';let i=0;const seq=[110,130.81,146.83,123.47,98,146.83,164.81,123.47];musicTimer=setInterval(()=>{if(musicMode!=='suspense')return;const f=seq[i++%seq.length];note(f,1.25,'triangle',.025);note(f*2.01,1.0,'sine',.012,.08);},850);}
+document.getElementById('audioBtn').addEventListener('click',async()=>{const b=document.getElementById('audioBtn');if(!audioCtx){audioCtx=new (window.AudioContext||window.webkitAudioContext)();master=audioCtx.createGain();master.gain.value=.65;master.connect(audioCtx.destination);}await audioCtx.resume();if(musicMode!=='off'){stopMusic();b.textContent='♫ Ligar suspense';b.setAttribute('aria-pressed','false')}else{startSuspense();b.textContent='♫ Pausar suspense';b.setAttribute('aria-pressed','true')}});
+document.getElementById('yesBtn').addEventListener('click',()=>{document.getElementById('yesEnding').classList.remove('hidden');document.getElementById('noMessage').classList.add('hidden');confetti();});
+//document.getElementById('noBtn').addEventListener('click',()=>{document.getElementById('noMessage').classList.remove('hidden')});
+noBtn.addEventListener('mouseover', () => {
+    const maxX = window.innerWidth - noBtn.offsetWidth;
+    const maxY = window.innerHeight - noBtn.offsetHeight;
+
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
+
+    noBtn.style.position = 'fixed';
+    noBtn.style.left = `${x}px`;
+    noBtn.style.top = `${y}px`;
+});
+function confetti(){const colors=['#ff78b7','#ffd98c','#fff0f7','#c99cff'];for(let i=0;i<65;i++){const el=document.createElement('i');el.textContent=i%3===0?'♥':'✦';el.style.cssText=`position:fixed;z-index:10;left:${Math.random()*100}vw;top:-30px;color:${colors[i%colors.length]};font-style:normal;font-size:${12+Math.random()*20}px;pointer-events:none;transition:transform ${2+Math.random()*2}s linear,opacity 3s`;document.body.appendChild(el);requestAnimationFrame(()=>{el.style.transform=`translateY(${window.innerHeight+80}px) rotate(${Math.random()*500}deg)`;el.style.opacity='0'});setTimeout(()=>el.remove(),4200)}}
+</script>
+</body>
+</html>
